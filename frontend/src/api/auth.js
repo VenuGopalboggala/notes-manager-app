@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL = 'http://localhost:5001/api/auth';
+const API_URL = 'https://notes-manager-backend-oqc9.onrender.com/api/auth';
 
 const setAuthToken = (token) => {
   if (token) {

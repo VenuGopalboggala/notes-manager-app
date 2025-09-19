@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL = 'http://localhost:5001/api/notes';
+const API_URL = 'https://notes-manager-backend-oqc9.onrender.com/api/notes';
 
 export const getNotes = () => axios.get(API_URL);
 export const addNote = (noteData) => axios.post(API_URL, noteData);
