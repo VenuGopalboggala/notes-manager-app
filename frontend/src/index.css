@@ -1,0 +1,284 @@
+/* --- General Styles & Variables --- */
+:root {
+  --bg-color: #111827; /* Dark background */
+  --card-color: #1f2937; /* Lighter dark for cards */
+  --primary-color: #4f46e5; /* Indigo */
+  --primary-hover: #4338ca;
+  --danger-color: #e11d48; /* Rose */
+  --danger-hover: #be123c;
+  --text-color: #d1d5db; /* Light gray for text */
+  --text-heading: #f9fafb; /* White for headings */
+  --border-color: #374151; /* Darker gray for borders */
+  --box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* --- Authentication Pages --- */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.auth-box {
+  background: var(--card-color);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.auth-box h2 {
+  color: var(--text-heading);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.auth-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-box input {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: box-shadow 0.2s;
+}
+
+.auth-box input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5);
+}
+
+.auth-box button {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.auth-box button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.auth-box p {
+  margin-top: 1.5rem;
+}
+
+.auth-box a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.error-msg {
+  color: #fecdd3;
+  background-color: rgba(225, 29, 72, 0.2);
+  border: 1px solid var(--danger-color);
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+/* --- Navbar --- */
+.navbar {
+  background: var(--card-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar h1 {
+  color: var(--text-heading);
+  font-weight: 700;
+}
+
+.navbar button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.navbar button:hover {
+  background-color: var(--border-color);
+  color: var(--text-heading);
+}
+
+/* --- Dashboard --- */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1300px;
+  margin: auto;
+  align-items: flex-start;
+}
+
+.form-container, .notes-list {
+  background: var(--card-color);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.form-container h2, .notes-list h2 {
+  color: var(--text-heading);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container input,
+.form-container textarea {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-container textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5);
+}
+
+.form-container button {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-container button:hover {
+  background-color: var(--primary-hover);
+}
+
+.form-container .cancel-btn {
+  background-color: #4b5563;
+  margin-top: 0.5rem;
+}
+.form-container .cancel-btn:hover {
+  background-color: #374151;
+}
+
+/* --- Note Item --- */
+.note-item {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+}
+
+.note-item:hover {
+  border-color: var(--primary-color);
+}
+
+.note-item h3 {
+  color: var(--text-heading);
+  margin-bottom: 0.5rem;
+}
+
+.note-item p {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.note-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.note-actions button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.note-actions button:hover {
+  background-color: var(--border-color);
+  color: var(--text-heading);
+}
+
+.note-actions .delete-btn {
+  border-color: var(--danger-color);
+  color: var(--danger-color);
+}
+
+.note-actions .delete-btn:hover {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+  }
+}
